@@ -26,6 +26,8 @@ const handlePopup = (status) => {
         wifiIcon.className="uil uil-wifi";
         popupTitle.innerText = "Connection Restrored";
         popupDesc.innerHTML = "Your device is successfully connected to internet connection.";
+        reconnectBtn.innerText = "Connected"
+        reconnectBtn.style.backgroundColor = 'green'
         popup.classList.add("online");
         return setTimeout(() => popup.classList.remove("show","online"),2000);
     }
@@ -34,6 +36,7 @@ const handlePopup = (status) => {
         popupTitle.innerText = "No Internet Connection";
         popupDesc.innerHTML = "Your network is unavailable. We will attmept to reconnect you in <b>10</b> seconds";
         popup.className = "popup show";
+        reconnectBtn.innerText = "Reconnect Now"
 
         intervalID = setInterval(function() {
             timer--;
